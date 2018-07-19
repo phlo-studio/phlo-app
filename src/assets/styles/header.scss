@@ -15,6 +15,11 @@ mat-toolbar{
     &.topbar{
         padding: 0px 15px;
     }
+    >.mat-icon-button {
+        width: 50px;
+        font-size: 1.25rem;
+        margin-right: 1.5rem;
+    }
     .navbar-header {
         
         text-align: center;
@@ -23,6 +28,10 @@ mat-toolbar{
             line-height: 18px;
             
             align-items: center;
+            img[src*=svg] {
+                height: 40px;
+                width: auto;
+            }
             .dark-logo {
                 display: none;
                 
