@@ -1,7 +1,7 @@
 <!-- ============================================================== -->
 <!-- Main wrapper - style you can find in pages.scss -->
 <!-- ============================================================== -->
-<div class="main-container"> 
+<div class="main-container" [dir]="dir" [ngClass]="{'minisidebar': !minisidebar, 'boxed': boxed, 'danger': danger, 'blue': blue, 'green': green, 'dark': !dark }">
     <!-- ============================================================== -->
     <!-- Topbar - style you can find in header.scss -->
     <!-- ============================================================== -->
@@ -9,7 +9,7 @@
         <!-- ============================================================== -->
         <!-- sidebar toggle -->
         <!-- ============================================================== -->
-        
+
         <button mat-icon-button (click)="snav.toggle()" value="sidebarclosed">
             <fa-icon [icon]="['fas', 'th']"></fa-icon>
             <!-- <mat-icon>menu</mat-icon> -->
@@ -24,7 +24,7 @@
                 <b>
                     <!-- dark Logo text -->
                     <img src="assets/images/dd-face-dbd-dk.svg" class="dark-logo" alt="homepage">
-                    <!-- Light Logo text -->    
+                    <!-- Light Logo text -->
                     <img src="assets/images/dd-face-dbd-lt.svg" class="light-logo" alt="homepage">
                 </b>
                 <!--End Logo icon -->
@@ -44,26 +44,26 @@
         <!-- Sidebar - style you can find in sidebar.scss -->
         <!-- ============================================================== -->
         <mat-sidenav #snav id="snav" class="dark-sidebar pl-xs" [mode]="mobileQuery.matches ? 'side' : 'over'" fixedTopGap="0" [opened]="mobileQuery.matches" [disableClose]="mobileQuery.matches" (open)="sidebarOpened = true" (close)="sidebarOpened = false" >
-            
+
                 <app-sidebar></app-sidebar>
-               
-            
+
+
         </mat-sidenav>
         <!-- ============================================================== -->
         <!-- Sidebar - style you can find in sidebar.scss -->
         <!-- ============================================================== -->
-        
+
         <!-- ============================================================== -->
         <!-- Page container - style you can find in pages.scss -->
         <!-- ============================================================== -->
         <mat-sidenav-content class="page-wrapper">
-                 
+
                 <div class="page-content">
-                   
+
                         <router-outlet><app-spinner></app-spinner></router-outlet>
-                    
-                </div>    
-               
+
+                </div>
+
         </mat-sidenav-content>
         <!-- ============================================================== -->
         <!-- Page container - style you can find in pages.scss -->
